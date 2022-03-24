@@ -1,0 +1,76 @@
+.mdf-app {
+  width: 86%;
+  height: 100%;
+  margin: 0 auto;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  transition: all 0.4s ease-out;
+}
+
+.mdf-gallery__img {
+  max-width: 100%;
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 250ms;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $boxShadow;
+  }
+}
+
+#mdf-container__gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 60px;
+
+  a {
+    margin: 0 auto;
+  }
+}
+
+#mdf-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 250ms transform;
+  padding: 40px;
+
+  #selectedImage {
+    max-height: 100%;
+  }
+}
+
+.gallery-name {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.main-gallery {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.gallery__product-overlay {
+  color: $darkOlive;
+  display: flex;
+  justify-content: center;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .overlay-image__title {
+    font-weight: bold;
+    font-size: 30px;
+    top: 150px;
+  }
+}

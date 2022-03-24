@@ -1,0 +1,151 @@
+.active-link {
+  position: relative;
+  color: #006405;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background-color: #1e5042;
+  }
+}
+
+.header {
+  width: 100%;
+  padding: 0 15px;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: $transition;
+
+  .nav {
+    height: 56px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+
+    .nav__logo {
+      color: #000;
+      font-weight: 500;
+      align-items: center;
+      column-gap: 8px;
+      transition: $transition;
+
+      .nav_logo-icon {
+        font-size: 15px;
+        color: $middleGreen;
+      }
+
+      &:hover {
+        color: $darkGreen;
+      }
+    }
+  }
+}
+
+.nav__toggle {
+  color: $darkGreen;
+  display: inline-flex;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .header {
+    padding: 0 15%;
+
+    .nav {
+      height: 80px;
+      column-gap: 10px;
+      font-size: 12px;
+    }
+  }
+
+  .nav__menu {
+    margin-left: auto;
+
+    .nav__list {
+      flex-direction: row;
+      column-gap: 20px;
+    }
+
+    .nav__close {
+      display: none;
+    }
+  }
+
+  .nav__toggle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav__menu {
+    position: fixed;
+    background-color: $white;
+    width: 80%;
+    height: 100%;
+    top: 0;
+    //right: 0;
+    right: -100%;
+    box-shadow: -2px 0 4px #dfeedd;
+    padding: 20px 0 0 26px;
+    border-radius: 8px 0 0 8px;
+    transition: $transition;
+    z-index: 100;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header {
+    padding: 0;
+
+    .nav {
+      width: 968px;
+      height: 80px;
+      column-gap: 10px;
+      font-size: 18px;
+      margin: 0 auto;
+    }
+  }
+}
+
+.nav__close {
+  font-size: 20px;
+  position: absolute;
+  top: 13px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  .nav__item {
+    .nav__link {
+      color: $darkGreen;
+      font-weight: 500;
+      transition: $transition;
+
+      &:hover {
+        color: $middleGreen;
+      }
+    }
+  }
+}
+
+.show-menu {
+  right: 0;
+}
+
+.scroll-header {
+  box-shadow: $boxShadow;
+}

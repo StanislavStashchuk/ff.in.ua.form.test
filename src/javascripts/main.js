@@ -58,5 +58,3 @@ accordionItems.forEach((item) => {
     }
   });
 });
-
-const sections = document.querySelectorAll('section[id]');

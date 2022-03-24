@@ -1,0 +1,149 @@
+.home {
+  &__img {
+    width: 300px;
+    justify-self: center;
+  }
+
+  &__data {
+    text-align: center;
+
+    .title {
+      line-height: 130%;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .home__description {
+      margin: 20px auto;
+      word-break: break-all;
+      width: 90%;
+    }
+
+    .button {
+      display: inline-block;
+      background-color: snow;
+      color: $darkGreen;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-weight: 500;
+      transition: $transition;
+      border: 2px solid $darkGreen;
+
+      &:hover {
+        color: $darkOlive;
+
+        .button__icon {
+          transform: translateX(3px);
+        }
+      }
+    }
+
+    .button--flex {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 8px;
+
+      .button__icon {
+        transition: $transition;
+      }
+    }
+  }
+
+  &__container {
+    display: grid;
+    position: relative;
+    row-gap: 30px;
+    max-width: 968px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .social {
+    position: absolute;
+    top: 90px;
+    right: 15px;
+    display: grid;
+    justify-items: center;
+    row-gap: 60px;
+
+    &__follow {
+      font-weight: 500;
+      font-size: 18px;
+      color: $darkGreen;
+      position: relative;
+      transform: rotate(90deg) translate(50%, 0);
+      width: 25px;
+    }
+
+    &__links {
+      padding-top: 60px;
+      display: inline-flex;
+      flex-direction: column;
+      row-gap: 10px;
+
+      .link {
+        font-size: 26px;
+        color: $darkGreen;
+        transition: $transition;
+
+        &:hover {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .home {
+    padding: 0 15%;
+
+    .home__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+
+      .home__img {
+        width: 266px;
+        order: 1;
+      }
+
+      .home__social {
+        top: 30%;
+
+        .links {
+          padding-top: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .home {
+    height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+
+    .home__container {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 35px;
+      width: 968px;
+      padding: 0;
+      margin: 0 auto;
+
+      .home__img {
+        width: 360px;
+      }
+
+      .home__data {
+        text-align: left;
+
+        .title {
+          font-size: 50px;
+          line-height: 140%;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

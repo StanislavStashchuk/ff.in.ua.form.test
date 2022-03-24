@@ -1,0 +1,38 @@
+.scrollup {
+  position: fixed;
+  background: snow;
+  right: 16px;
+  bottom: -20%;
+  display: inline-flex;
+  padding: 8px;
+  border-radius: 4px;
+  z-index: 10;
+  opacity: 0.75;
+  transition: $transition;
+
+  &:hover {
+    background-color: $lightGreen;
+    opacity: 1;
+  }
+
+  &__icon {
+    font-size: 17px;
+    color: $white;
+  }
+}
+
+/* Show Scroll Up */
+.show-scroll {
+  bottom: 46px;
+}
+
+/* =============== SCROLL BAR =============
+::-webkit-scrollbar{
+    width: 9px;
+    background: blueviolet;
+
+    &-thumb{
+        background: hsl(var(--hue), 4%, 29%);
+        border-radius: 8px;
+    }
+} == */
