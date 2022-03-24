@@ -1,0 +1,1 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/86e08c82-add7-4149-b403-1b0294f33acf/deploy-status)](https://app.netlify.com/sites/ffinua/deploys)
