@@ -19,8 +19,8 @@ exports.handler = async function sendMail(event) {
     to: email,
     from: MAIL_FROM,
     subject: 'Contact Message from Website',
-    text: Message from ${name} with email ${email}: ${message},
-    html: Message from ${name} with email ${email}: ${message}
+    text: `Message from ${name} with email ${email}: ${message}`,
+    html: `Message from ${name} with email ${email}: ${message}`
   };
 
   console.log(msg);
@@ -39,7 +39,7 @@ exports.handler = async function sendMail(event) {
           'Access-Control-Allow-Origin': '*' // Required for CORS support to work
         },
         body: JSON.stringify({
-          message: Error: ${JSON.stringify(error.response.body)}
+          message: `Error: ${JSON.stringify(error.response.body)}`
         })
       };
     }
