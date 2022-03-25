@@ -19,7 +19,7 @@ exports.handler = async function sendMail(event) {
     from: EMAIL_FROM,
     subject: 'Contact Message from Website',
     text: `Message from ${name}`,
-    html: `Message from ${name} with email ${email}: ${message}`,
+    html: `Message from ${name} : ${message}`,
   };
 
   console.log(msg);
