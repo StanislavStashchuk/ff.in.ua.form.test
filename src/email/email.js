@@ -1,6 +1,6 @@
 const sendgridMail = require('@sendgrid/mail');
 
-sendgridMail.setApiKey(process.env.SENDGRID_API_KEY);
+sendgridMail.setApiKey(process.env.SENDGRID_TEST_API_REY);
 
 console.log(process.env.MAIL_FROM);
 
@@ -20,7 +20,7 @@ exports.handler = async function sendMail(event) {
     from: MAIL_FROM,
     subject: 'Contact Message from Website',
     text: `Message from ${name} with email ${email}: ${message}`,
-    html: `Message from ${name} with email ${email}: ${message}`
+    html: `Message from ${name} with email ${email}: ${message}`,
   };
 
   console.log(msg);
@@ -48,10 +48,10 @@ exports.handler = async function sendMail(event) {
   return {
     statusCode: 200,
     headers: {
-      'Access-Control-Allow-Origin': '*' // Required for CORS support to work
+      'Access-Control-Allow-Origin': '*' ,// Required for CORS support to work
     },
     body: JSON.stringify({
       message: 'Success!'
-    })
+    }),
   };
 };
