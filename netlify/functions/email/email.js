@@ -1,25 +1,24 @@
 const sendgridMail = require('@sendgrid/mail');
 
-sendgridMail.setApiKey(process.env.SENDGRID_TEST_API_REY);
+sendgridMail.setApiKey(process.env.SENDGRID_TEST_API_KEY);
 
-console.log(process.env.MAIL_FROM);
+console.log(process.env.EMAIL_FROM);
 
-const {MAIL_FROM} = process.env;
+const {EMAIL_FROM, EMAIL_TO} = process.env;
 
 exports.handler = async function sendMail(event) {
   const {
-    email,
     name,
     message
   } = event.queryStringParameters;
 
-  console.log(process.env.MAIL_FROM);
+  console.log(process.env.EMAIL_FROM);
 
   const msg = {
-    to: email,
-    from: MAIL_FROM,
+    to: EMAIL_TO,
+    from: EMAIL_FROM,
     subject: 'Contact Message from Website',
-    text: `Message from ${name} with email ${email}: ${message}`,
+    text: `Message from ${name}`,
     html: `Message from ${name} with email ${email}: ${message}`,
   };
 
