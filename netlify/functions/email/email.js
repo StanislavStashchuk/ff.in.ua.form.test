@@ -10,14 +10,12 @@ exports.handler = async function sendMail(event) {
   const {
     name,
     message
-  } = event.queryStringParameters;
-
-  console.log(process.env.EMAIL_FROM);
+  } = event.body;
 
   const msg = {
     to: EMAIL_TO,
     from: EMAIL_FROM,
-    subject: 'Contact Message from Website',
+    subject: 'Contact Message from user${email}',
     text: `Message from ${name}`,
     html: `Message from ${name} : ${message}`,
   };
