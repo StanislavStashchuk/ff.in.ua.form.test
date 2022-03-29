@@ -4,13 +4,15 @@ sendgridMail.setApiKey(process.env.SENDGRID_TEST_API_KEY);
 
 console.log(process.env.EMAIL_FROM);
 
-const {EMAIL_FROM, EMAIL_TO} = process.env;
 
 exports.handler = async function sendMail(event) {
   const {
     name,
+    email,
     message
-  } = event.body;
+  } = JSON.parse(event.body);
+  
+  const {EMAIL_TO, EMAIL_FROM} = process.env;
 
   const msg = {
     to: EMAIL_TO,
