@@ -1,6 +1,7 @@
 // Load jQuery from NPM
 import $ from 'jquery';
 
+const successMessage = document.querySelector('.success-message');
 const form = document.querySelector('[name="contact"]');
 const name = document.querySelector('[name="name"]');
 const email = document.querySelector('[name="email"]');
@@ -10,7 +11,10 @@ document.querySelector('[type="submit"]')
   .addEventListener('click', (event) => {
     event.preventDefault();
 
-    console.log(name.value, email.value, message.value);
+    if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+      alert('email not valid');
+      return;
+    }
 
     $.ajax({
       method: 'POST',
@@ -27,6 +31,11 @@ document.querySelector('[type="submit"]')
         message.value = '';
 
         form.style.display = 'none';
+
+        setTimeout(() => {
+          form.style.display = 'block';
+          successMessage.style.display = 'none';
+        }, 3000);
       })
       .fail(() => {
         alert('Fail');
