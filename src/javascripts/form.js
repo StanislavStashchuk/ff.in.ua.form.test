@@ -31,6 +31,7 @@ document.querySelector('[type="submit"]')
         message.value = '';
 
         form.style.display = 'none';
+        successMessage.style.display = 'block';
 
         setTimeout(() => {
           form.style.display = 'block';
