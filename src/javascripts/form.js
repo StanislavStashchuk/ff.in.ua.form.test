@@ -1,6 +1,7 @@
 // Load jQuery from NPM
 import $ from 'jquery';
 
+const form = document.querySelector('[name="contact"]');
 const name = document.querySelector('[name="name"]');
 const email = document.querySelector('[name="email"]');
 const message = document.querySelector('[name="message"]');
@@ -19,5 +20,15 @@ document.querySelector('[type="submit"]')
         email: email.value,
         message: message.value
       })
-    });
+    })
+      .done(() => {
+        name.value = '';
+        email.value = '';
+        message.value = '';
+
+        form.style.display = 'none';
+      })
+      .fail(() => {
+        alert('Fail');
+      });
   });
